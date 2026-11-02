@@ -1,0 +1,21 @@
+{
+  "name": "pertheater-application-",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node pertheater.js",
+    "devStart": "nodemon pertheater.js"
+  },
+  "dependencies": {
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^9.11.4"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.9",
+    "nodemon": "^3.1.14"
+  }
+}
