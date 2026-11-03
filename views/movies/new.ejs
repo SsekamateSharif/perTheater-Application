@@ -1,0 +1,7 @@
+<h2>New Hero</h2> <!--This is the title of our new movie page-->
+<!--We create our form for our new movies page-->
+<form action ="/movies" method ="POST">
+    <%-include('_form_fields')%>
+    <a href = "/movies">Cancel</a>  <!--This button links back to our movies index page-->
+    <button type = "submit" >Create</button> <!--This submits our form-->
+</form>

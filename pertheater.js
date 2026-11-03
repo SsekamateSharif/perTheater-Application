@@ -20,7 +20,7 @@ app.set('layout', 'layouts/layout'); // this means that our application layout w
 // we need to tell our app to use our express layouts 
 app.use(expressLayouts);
 // we tell our express app to use body-parser library to extract data from html forms submitted by users
-app.use(bodyParser.urlencoded({limit: '10 mb', extended: false}));
+app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
 // we then tell our app to use the files in our public folder as static files 
 app.use(express.static('public'));
 // we tell our app to use json data
@@ -30,10 +30,16 @@ app.use(express.json());
 const indexRouter = require('./routes/index');
 // we import our heros router here
 const herosRouter = require('./routes/heros');
+// we import our movies router 
+const moviesRouter = require('./routes/movies');
+
 // we tell our app to use or index router 
 app.use('/', indexRouter);
 // we tell our app to use our heros router
 app.use('/heros', herosRouter);
+// we tell our app to use the movies router 
+app.use('/movies', moviesRouter);
+
 // we tell our app to listen, accept and respond to requests runnin on local host 3000
 app.listen(3000, ()=>{console.log("Server is running on port 3000.")});
 

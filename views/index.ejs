@@ -1,2 +1,9 @@
 <!--here we will write HTML code for the layout of our homepage-->
-MIDDLE
+<h2>Recently Added Movies</h2>
+<div>
+    <%movies.forEach(movie => {%>
+        <div>
+            <img height = "150" width = "150" src = "<%=movie.coverImagePath%>">
+        </div>
+    <%}) %>
+</div>

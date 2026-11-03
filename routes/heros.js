@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 });
 
 // for new heros
-router.get('/:new', (req, res) =>{
+router.get('/new', (req, res) =>{
     res.render('heros/new', {hero: new Hero()}); // here we render the heros new page and also create a new empty hero object for creating our hero.
     // what object name we use here determines the object that we use in the ejs templates.
 })
