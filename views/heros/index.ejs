@@ -1,0 +1,19 @@
+<!--Here we will create our heros index page-->
+<!--Our index page title-->
+<h2>Search Heros</h2>
+<!--We create our index page form here-->
+<form action = "/heros" method="GET">
+    <!--now we design our form-->
+    <label>Hero Name</label>
+    <!--Input field-->
+    <input type = "text" name = "name" value = "<%=searchOptions.name%>">
+    <!--Buttons-->
+    <a href = "/" >Cancel</a>
+    <!--Search submit button-->
+    <button type ="submit">Search</button>
+</form>
+<br>
+<!--After our form we need to display our heros names-->
+<% heros.forEach(hero => { %>
+    <%=hero.name%>
+<% }) %>
