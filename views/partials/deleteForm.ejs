@@ -1,0 +1,6 @@
+<!--We will add our delete Form here that does the delete action for us-->
+<form action = "<%=url%>?_method=DELETE" method="POST">
+    <!--We use a dynamic url because we would love to use this delete form for also our movies templates so we can dynamically change the urls that the form has action to-->
+    <!--We also do a method override since this form will be sending delete requests to the server-->
+    <button type = "submit" >Delete</button>
+</form>

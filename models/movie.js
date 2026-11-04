@@ -1,7 +1,5 @@
 // here we will make our movies database model using mongoose
 const mongoose = require('mongoose');
-// we import our hero database model here 
-const Hero = require('../models/hero');
 // we create our database model schema
 const movieSchema = new mongoose.Schema({
     title: {
@@ -49,7 +47,7 @@ const movieSchema = new mongoose.Schema({
 movieSchema.virtual('coverImagePath').get(function(){
     // we check if there is a cover image in the database 
     if(this.coverImage != null && this.coverImage != ''){
-        return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString(`base64`)}`;
+        return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString(`base64`)}`; // this is the data of the image we want to retrieve from the database 
     }
 })
 // we export our database model

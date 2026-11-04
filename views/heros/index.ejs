@@ -18,4 +18,11 @@
     <div>
        <%=hero.name%>
     </div>
+    <div>
+        <a href = "/heros/<%=hero.id%>">View</a> <!--This links to our hero's show page-->
+        <a href = "/heros/<%=hero.id%>/edit">Edit</a> <!--This links to our hero's edit page-->
+        <!--We include our deleteForm file to display our delete button on the heros home/index page-->
+        <!--Since we are using a dynamic url for our delete form we need to assign a url when we include or deleteForm.ejs file-->
+        <%-include('../partials/deleteForm', {url: `/heros/${hero.id}`})%>
+    </div>
 <% }) %>

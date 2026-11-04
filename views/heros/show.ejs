@@ -1,0 +1,20 @@
+<!--My show page code will be here-->
+<!--Show page heading-->
+<h2><%=hero.name%></h2>
+<!--We will have two buttons; edit button and delete button-->
+<a href = "/heros/<%=hero.id%>/edit">Edit</a> <!--This links to the edit page-->
+<!--delete button we include our deleteForm.ejs file sending a request to the '/heros/hero.id' route-->
+<%-include('../partials/deleteForm', {url: `/heros/${hero.id}`})%>
+<br>
+<!--We need to check and see if there are any books got from the database-->
+<%if(movies.length > 0){ %>
+    <!--We need to add the movies that are linked with this specific hero-->
+    <h2>Movies By Hero</h2>
+    <br>
+    <!--We will use this forEach loop to iterate through the movies that we have retrieved from our database-->
+    <%movies.forEach(movie =>{%>
+        <div>
+            <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+        </div>
+    <%})%>
+<% } %>

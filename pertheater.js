@@ -6,6 +6,8 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 // we import body-parser library
 const bodyParser = require('body-parser');
+// we import the method-override dependecy; it will make us able to send delete and put requests to our server
+const methodOverride = require('method-override');
 // we use express to create an app 
 const app = express();
 
@@ -21,6 +23,8 @@ app.set('layout', 'layouts/layout'); // this means that our application layout w
 app.use(expressLayouts);
 // we tell our express app to use body-parser library to extract data from html forms submitted by users
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
+// we tell our app to use our method override dependency
+app.use(methodOverride('_method')); // we will use _method when performing our method override tasks 
 // we then tell our app to use the files in our public folder as static files 
 app.use(express.static('public'));
 // we tell our app to use json data
