@@ -3,7 +3,9 @@
 <div>
     <%movies.forEach(movie => {%>
         <div>
-            <img height = "150" width = "150" src = "<%=movie.coverImagePath%>">
+            <a href = "/movies/<%=movie.id%>">
+               <img height = "150" width = "150" src = "<%=movie.coverImagePath%>">
+            </a>
         </div>
     <%}) %>
 </div>

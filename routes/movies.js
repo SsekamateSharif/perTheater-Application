@@ -93,6 +93,95 @@ router.post('/', async (req, res) => {
     }
 });
 
+
+// we add the show route, edit route, update route, delete route 
+// show movie route 
+router.get('/:id', async (req, res)=>{
+    // we render our show page for our movies 
+    try{
+        const movie = await Movie.findById(req.params.id).populate('hero').exec(); // we find the movie from the database by their id 
+        // we replace the referenced hero object id with the real author 
+        // we then render our show page 
+        res.render('movies/show', {
+            movie: movie
+        })
+    }catch{
+        res.redirect('/movies');
+    }
+});
+
+// editing movie route
+router.get('/:id/edit', async (req, res)=>{
+    // we render our edit page 
+    try{
+        // we get our movie from the database by their id  
+        const movie = await Movie.findById(req.params.id);
+        // we get our hero associated to our movie
+        const heros = await Hero.find({});
+        // then we render our edit page with our movie that we retrieved 
+        res.render('movies/edit', {
+            heros: heros,
+            movie: movie
+        });
+    }catch{
+        res.redirect('/movies'); // redirect to the movies home / index page 
+    }
+});
+
+// updating movie route
+router.put('/:id', async (req, res)=>{
+    // we give our edit page its functionality 
+    // we create a variable for storing our movie 
+    let movie;
+    try{
+        // we get our movie from the database 
+        movie = await Movie.findById(req.params.id);
+        // changing or updating the parameters that the user updates 
+        movie.title = req.body.title;
+        movie.hero = req.body.hero;
+        movie.publishDate = req.body.publishDate;
+        movie.seasons = req.body.seasons;
+        movie.description = req.body.description;
+        // then we need to save the new cover image if the user decides to update the cover image 
+        if(req.body.cover != null && req.body.cover != ''){
+            // we run the save cover function 
+            saveCover(movie, req.body.cover);
+        }
+        // we then save our changes in the database 
+        await movie.save();
+        // then we redirect to our movies show page 
+        res.redirect(`/movies/${movie.id}`);
+    }catch{  
+        const heros = await Hero.find({});
+        // when there is an error we render out an error
+        res.render('movies/edit', {
+            heros: heros,
+            movie: movie,
+            errorMessage: "Error updating the movie"
+        });
+        
+    }
+});
+
+// deleting movie route
+router.delete('/:id', async (req, res)=>{
+    // we give the delete button its functionality 
+    let movie; // variable to store our movie retrieved from our database 
+    try{
+        movie = await Movie.findById(req.params.id); // we find the movie by its id 
+        await movie.deleteOne(); // we delete the movie from our database 
+
+        // then we have to redirect the use to our movies index page to see that the movie was deleted 
+        res.redirect('/movies');
+    }catch{
+        // we render the movie's index/home page but with an error message.
+        res.render('movies', {
+            movie: movie, 
+            errorMessage: 'Error Deleting The Movie'
+        });
+    }
+});
+
 // we create a function that saves our uploaded images into the mongoose database of our application 
 // movie parameter is the movie we are creating or updating 
 // coverEncoded: is the cover image details for the image being uploaded
@@ -112,7 +201,6 @@ function saveCover(movie, coverEncoded){
         movie.coverImageType = cover.type; 
     }
 }
-
 
 // we export the router   
 module.exports = router;

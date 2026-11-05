@@ -33,6 +33,12 @@
 <% movies.forEach(movie => { %>
     <div>
         <!--We need to display our movie cover images below-->
-        <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+        <a href = "/movies/<%=movie.id%>">
+           <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+        </a>
+        <a href = "/movies/<%=movie.id%>">View</a> <!--This links us to the show page of the book-->
+        <a href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page -->
+        <!--Our delete button we include the deleteForm.ejs-->
+        <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%>
     </div>
 <% }) %>

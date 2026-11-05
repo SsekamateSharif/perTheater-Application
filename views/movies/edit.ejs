@@ -1,0 +1,8 @@
+<h2>Edit Movie</h2> <!--This is the title of our new movie page-->
+<!--We create our form for our new movies page-->
+<!--We do a method override since we want this form to submit a put request to our server instead of a post request-->
+<form action ="/movies/<%=movie.id%>?_method=PUT" method ="POST">
+    <%-include('_form_fields')%>
+    <a href = "/movies">Cancel</a>  <!--This button links back to our movies index page-->
+    <button type = "submit" >Update</button> <!--This submits our form-->
+</form>

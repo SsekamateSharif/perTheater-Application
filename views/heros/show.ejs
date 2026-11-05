@@ -14,7 +14,9 @@
     <!--We will use this forEach loop to iterate through the movies that we have retrieved from our database-->
     <%movies.forEach(movie =>{%>
         <div>
-            <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+            <a href ="/movies/<%=movie.id%>">
+               <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+            </a>
         </div>
     <%})%>
 <% } %>

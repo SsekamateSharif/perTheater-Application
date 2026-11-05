@@ -1,0 +1,29 @@
+<!--The Show Page Heading-->
+<h2><%=movie.title%></h2>
+<br>
+<div>
+    <!--We have to add the movie cover image-->
+    <img height="150" width = "150" src ="<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+</div>
+<br>
+<div>
+    <!--We display our movie details-->
+    <div>
+       Hero: <%=movie.hero.name%>
+    </div>
+    <div>
+       Seasons: <%=movie.seasons%>
+    </div>
+    <div>
+       Publish Date: <%=movie.publishDate.toISOString().split('T')[0]%> <!--We need to convert our date to the perfect date mode-->
+    </div>
+    <div>
+       Description: <%=movie.description%>
+    </div>
+</div>
+<br>
+<div>
+    <!--Then we add our buttons-->
+    <a href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page-->
+    <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%> <!--This creates our delete button-->
+</div>
