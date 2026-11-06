@@ -1,44 +1,52 @@
 <!--Here we will create our movies index page-->
 <!--Our index page title-->
-<h2>Search Movies</h2>
-<div>
-    <!--We create our index page form here-->
-    <form action = "/movies" method="GET">
-        <div>
-            <!--now we design our form-->
-            <label>Movie Title</label>
-            <!--Input field for our title search field-->
-            <input type = "text" name = "title" value = "<%=searchOptions.title%>">
-        </div>
-        <div>
-            <!--input field for our published after date search field-->
-            <label>Published After</label>
-            <input type = "date" name = "publishAfter" value = "<%=searchOptions.publishAfter%>">
-        </div>
-        <div>
-            <!--input field for our published before date search field-->
-            <label>Published Before</label>
-            <input type = "date" name = "publishBefore" value = "<%=searchOptions.publishBefore%>">
-        </div>
-        <div>
-            <!--Buttons-->
-            <a href = "/" >Cancel</a>
-            <!--Search submit button-->
-            <button type ="submit">Search</button>
-        </div>
-    </form>
+<div class = "form-row">
+    <h2 class = "page-header">Search Movies</h2>
+    <div>
+        <!--We create our index page form here-->
+        <form action = "/movies" method="GET">
+            <div class = "form-item">
+                <!--now we design our form-->
+                <label>Movie Title</label>
+                <!--Input field for our title search field-->
+                <input type = "text" name = "title" value = "<%=searchOptions.title%>">
+            </div>
+            <div class = "form-item form-item-date">
+                <!--input field for our published after date search field-->
+                <label>Published After</label>
+                <input type = "date" name = "publishAfter" value = "<%=searchOptions.publishAfter%>">
+            </div>
+            <div class = "form-item form-item-date">
+                <!--input field for our published before date search field-->
+                <label>Published Before</label>
+                <input type = "date" name = "publishBefore" value = "<%=searchOptions.publishBefore%>">
+            </div>
+            <div class ="btn-row form-row-end">
+                <!--Buttons-->
+                <a class = "btn btn-primary" href = "/" >Cancel</a>
+                <!--Search submit button-->
+                <button class = "btn btn-primary" type ="submit">Search</button>
+            </div>
+        </form>
+    </div>
 </div>
 <br>
-<!--After our form we need to display our heros names-->
-<% movies.forEach(movie => { %>
-    <div>
-        <!--We need to display our movie cover images below-->
-        <a href = "/movies/<%=movie.id%>">
-           <img height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
-        </a>
-        <a href = "/movies/<%=movie.id%>">View</a> <!--This links us to the show page of the book-->
-        <a href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page -->
-        <!--Our delete button we include the deleteForm.ejs-->
-        <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%>
-    </div>
-<% }) %>
+<div class = "form-row">
+    <!--After our form we need to display our heros names-->
+    <% movies.forEach(movie => { %>
+        <div class = "form-item">
+            <!--We need to display our movie cover images below-->
+            <div>
+                <a href = "/movies/<%=movie.id%>">
+                <img class = "each-img" height = "150" width = "150" src = "<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+                </a>
+            </div>
+            <div class = "btn-row form-row-end">
+                <a class = "btn btn-primary" href = "/movies/<%=movie.id%>">View</a> <!--This links us to the show page of the book-->
+                <a class = "btn btn-primary" href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page -->
+                <!--Our delete button we include the deleteForm.ejs-->
+                <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%>
+            </div>
+        </div>
+    <% }) %>
+</div>

@@ -47,3 +47,101 @@
     text-shadow: 0 0 10px #00e5ff;
     cursor: pointer;
 }
+.form-item-date{
+    max-width: 300px;
+}
+.form-item-select{
+    max-width: 300px;
+}
+.form-item select{
+    height: 2rem;
+    padding: 0.5rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input-border-color);
+    background: var(--input-bg-color);
+    font-size: 0.85rem;
+    color: var(--color-text-light-form);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    transition: all 3s ease;
+}
+.form-item-select select option{
+    color: white;
+    background: #3B1018;
+}
+.form-item-select select{
+    color: white;
+    background: #3B1018;
+}
+.form-row-upload{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 3rem;
+}
+.form-item-upload{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+.form-item-upload:first-child{
+    margin-right: 20rem;
+}
+.form-item-upload label{
+    font-size: 1.3rem;
+    color: var(--color-text-light-form);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.form-item-upload textarea{
+    height: 350px;
+    width: 430px;
+    border-radius: 0.5rem;
+    border: none;
+    resize: none;
+    font-size: 1rem;
+    font-family: 'Maribela Demo';
+    font-weight: 500;
+}
+
+.filepond--root{
+    height: 230px;
+    width: 230px;
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 1.5rem;
+}
+.filepond--panel-root{
+    height: 230px;
+    background: white;
+    border: 1px solid var(--input-border-color);
+}
+.filepond--drop-label > label{
+    color: black !important;
+    font-size: 0.8rem;
+}
+.movie-details{
+    display: flex;
+    margin-left: 3rem;
+    padding: 1rem 0;
+}
+.movie-info{
+    margin-left: 10rem;
+    font-family: 'Nakota-Bold';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.info{
+    padding-bottom: 0.7rem;
+}
+.errorMessage{
+    color: lightgreen;
+    font-family: 'Maribela Demo';
+    font-size: 1.5rem;
+    font-weight: bold;
+}

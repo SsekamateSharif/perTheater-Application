@@ -1,7 +1,11 @@
-<h2>New Movie</h2> <!--This is the title of our new movie page-->
+<div class = "form-row">
+  <h2 class ="page-header">New Movie</h2> <!--This is the title of our new movie page-->
+</div>
 <!--We create our form for our new movies page-->
 <form action ="/movies" method ="POST">
     <%-include('_form_fields')%>
-    <a href = "/movies">Cancel</a>  <!--This button links back to our movies index page-->
-    <button type = "submit" >Create</button> <!--This submits our form-->
+    <div class = "btn-row form-row-end">
+        <a class = "btn btn-primary" href = "/movies">Cancel</a>  <!--This button links back to our movies index page-->
+        <button  class = "btn btn-primary" type = "submit" >Create</button> <!--This submits our form-->
+    </div>
 </form>

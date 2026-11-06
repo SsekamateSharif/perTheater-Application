@@ -1,49 +1,57 @@
 <!--Here we will design our form input fields-->
-<div>
-    <label>Title</label> <!--The title input for our movie-->
-    <input type = "text" name = "title" value = "<%=movie.title%>">
+<div class = "form-row">
+    <div class = "form-item">
+        <label>Title</label> <!--The title input for our movie-->
+        <input type = "text" name = "title" value = "<%=movie.title%>">
+    </div>
 </div>
-<div>
-    <!--we need to create a select box for choosing our movie heros-->
-    <label>Hero</label>
-    <!--This dropdown menu automatically selects a hero that is already associated with the movie-->
-    <select name = "hero">
-        <!--We iterate through the heros in the database using a forEach loop-->
-        <% heros.forEach(hero =>{ %>
-            <!--We need to check if that hero is associated with this movie. i.e if the hero's id is equal to that id of the hero property of this movie-->
-            <!--checks if the hero's id is eqaul to the id of the hero associated with the movie-->
-            <% if(hero.id === movie.hero){ %>
-                <!--If the hero is associated to the movie we automatically select that heros dropdown option-->
-                <option selected value = "<%=hero.id%>">
-                    <%=hero.name%>
-                </option>
-            <% }else{%>
-                <!--if no we default the selection of the hero-->
-                <option value = "<%=hero.id%>">
-                    <%=hero.name%>
-                </option>
-            <% } %>
-        <% }) %>
-    </select>
+<div class = "form-row">
+    <div class = "form-item form-item-select">
+        <!--we need to create a select box for choosing our movie heros-->
+        <label>Hero</label>
+        <!--This dropdown menu automatically selects a hero that is already associated with the movie-->
+        <select name = "hero">
+            <!--We iterate through the heros in the database using a forEach loop-->
+            <% heros.forEach(hero =>{ %>
+                <!--We need to check if that hero is associated with this movie. i.e if the hero's id is equal to that id of the hero property of this movie-->
+                <!--checks if the hero's id is eqaul to the id of the hero associated with the movie-->
+                <% if(hero.id === movie.hero){ %>
+                    <!--If the hero is associated to the movie we automatically select that heros dropdown option-->
+                    <option selected value = "<%=hero.id%>">
+                        <%=hero.name%>
+                    </option>
+                <% }else{%>
+                    <!--if no we default the selection of the hero-->
+                    <option value = "<%=hero.id%>">
+                        <%=hero.name%>
+                    </option>
+                <% } %>
+            <% }) %>
+        </select>
+    </div>
+    <div class = "form-item-date form-item">
+        <!--Now we need to do the publish date input-->
+        <label>Publish Date</label>
+        <input type = "date" name = "publishDate" value ="<%=movie.publishDate==null?'':movie.publishDate.toISOString().split('T')[0]%>">
+    </div>
 </div>
-<div>
-    <!--Now we need to do the publish date input-->
-    <label>Publish Date</label>
-    <input type = "date" name = "publishDate" value ="<%=movie.publishDate==null?'':movie.publishDate.toISOString().split('T')[0]%>">
+<div class = "form-row">
+    <div class = "form-item form-item-select">
+        <!--We add our season input-->
+        <label>Seasons</label>
+        <input type = "number" name = "seasons" min = "1" value = "<%=movie.seasons%>">
+    </div>
 </div>
-<div>
-    <!--We add our season input-->
-    <label>Seasons</label>
-    <input type = "number" name = "seasons" min = "1" value = "<%=movie.seasons%>">
-</div>
-<div>
-    <!--cover image input-->
-    <label>Cover Image</label>
-    <!--We set the input class to filepond inorder for this input field to be able to use the filepond plugins and styles-->
-    <input type = "file" name = "cover" class = "filepond">
-</div>
-<div>
-    <!--Description input-->
-    <label>Movie Description</label>
-    <textarea name = "description"><%=movie.description%></textarea>
+<div class = "form-row-upload">
+    <div class = "form-item-upload">
+        <!--cover image input-->
+        <label>Cover Image</label>
+        <!--We set the input class to filepond inorder for this input field to be able to use the filepond plugins and styles-->
+        <input type = "file" name = "cover" class = "filepond">
+    </div>
+    <div class ="form-item-upload">
+        <!--Description input-->
+        <label>Movie Description</label>
+        <textarea name = "description"><%=movie.description%></textarea>
+    </div>
 </div>

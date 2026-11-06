@@ -82,12 +82,13 @@ router.post('/', async (req, res) => {
     try{
         const newMovie = await movie.save();
         // we render the movie show page 
-        //res.render(`movies/${newMovie.id}`);
-        res.redirect('/movies'); // this is for now 
+        res.render(`movies/${newMovie.id}`);
     }catch{
+        const heros = await Hero.find({});
         // if there is an error we render our new movies page with an error message as well
         res.render('movies/new', {
             movie: movie,
+            heros: heros,
             errorMessage: "Error Creating Movie"
         }); 
     }
@@ -187,7 +188,7 @@ router.delete('/:id', async (req, res)=>{
 // coverEncoded: is the cover image details for the image being uploaded
 function saveCover(movie, coverEncoded){
     // we have to first check and see if there is any images uploaded 
-    if(coverEncoded == null){
+    if(coverEncoded == null || coverEncoded === ''){
         return; 
     }
     // if there is an image uploaded we convert its details from a json file into a javascript object 

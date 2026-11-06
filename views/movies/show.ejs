@@ -1,29 +1,37 @@
-<!--The Show Page Heading-->
-<h2><%=movie.title%></h2>
-<br>
-<div>
-    <!--We have to add the movie cover image-->
-    <img height="150" width = "150" src ="<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+<div class = "form-row">
+   <!--The Show Page Heading-->
+   <h2 class ="page-header"><%=movie.title%></h2>
 </div>
 <br>
-<div>
-    <!--We display our movie details-->
-    <div>
-       Hero: <%=movie.hero.name%>
-    </div>
-    <div>
-       Seasons: <%=movie.seasons%>
-    </div>
-    <div>
-       Publish Date: <%=movie.publishDate.toISOString().split('T')[0]%> <!--We need to convert our date to the perfect date mode-->
-    </div>
-    <div>
-       Description: <%=movie.description%>
-    </div>
+<div class = "movie-details">
+   <div class ="each-img">
+      <!--We have to add the movie cover image-->
+      <img height="150" width = "150" src ="<%=movie.coverImagePath%>" alt = "Movie Cover Image">
+   </div>
+   <br>
+   <div class = "movie-info">
+      <div>
+         <!--We display our movie details-->
+         <div class = "info">
+            Hero: <%=movie.hero.name%>
+         </div>
+         <div class = "info">
+            Seasons: <%=movie.seasons%>
+         </div>
+         <div class = "info">
+            Publish Date: <%=movie.publishDate.toISOString().split('T')[0]%> <!--We need to convert our date to the perfect date mode-->
+         </div>
+         <div class = "info">
+            Description: <%=movie.description%>
+         </div>
+      </div>
+   </div>
 </div>
 <br>
-<div>
-    <!--Then we add our buttons-->
-    <a href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page-->
-    <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%> <!--This creates our delete button-->
+<div class = "form-row">
+   <div class = "btn-row">
+      <!--Then we add our buttons-->
+      <a class ="btn btn-primary" href = "/movies/<%=movie.id%>/edit">Edit</a> <!--This links to the edit page-->
+      <%-include('../partials/deleteForm', {url: `/movies/${movie.id}`})%> <!--This creates our delete button-->
+   </div>
 </div>
