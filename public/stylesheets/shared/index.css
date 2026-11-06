@@ -1,0 +1,26 @@
+/* we design our main home page here*/
+.index-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-evenly;
+    margin-left: 3rem;
+}
+.imgs-displayed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+.each-img{
+    transition: transform 0.3 ease;
+    margin: 0 1rem;
+}
+.each-img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.imgs-displayed:first-child{
+    margin-left: 0;
+}

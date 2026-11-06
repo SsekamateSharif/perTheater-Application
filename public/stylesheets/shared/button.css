@@ -1,0 +1,42 @@
+/* we will design our buttons here*/
+.btn{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    border: 1px solid var(--btn-border);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--color-text-light-dark);
+}
+.btn-primary{
+    background: var(--btn-prim-bg-color);
+    transition: all 1ms ease;
+}
+.btn-primary:hover{
+    box-shadow: 0 0 15px var(--btn-border);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.btn-row{
+    display: flex;
+    align-items: flex-start;
+}
+.form-row-end{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-row *{
+    margin-left: 1.5rem;
+}
+.btn-row *:first-child{
+    margin-left: 0;
+}
+.btn-danger{
+    background: var(--btn-danger-bg-color);
+    transition: all 1ms ease;
+}
+.btn-danger:hover{
+    box-shadow: 0 0 15px #39FF14;
+    cursor: pointer;
+}

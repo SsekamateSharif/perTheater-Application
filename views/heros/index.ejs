@@ -1,28 +1,36 @@
 <!--Here we will create our heros index page-->
 <!--Our index page title-->
-<h2>Search Heros</h2>
-<!--We create our index page form here-->
-<form action = "/heros" method="GET">
-    <!--now we design our form-->
-    <label>Hero Name</label>
-    <!--Input field-->
-    <input type = "text" name = "name" value = "<%=searchOptions.name%>">
-    <!--Buttons-->
-    <a href = "/" >Cancel</a>
-    <!--Search submit button-->
-    <button type ="submit">Search</button>
-</form>
-<br>
-<!--After our form we need to display our heros names-->
-<% heros.forEach(hero => { %>
-    <div>
-       <%=hero.name%>
-    </div>
-    <div>
-        <a href = "/heros/<%=hero.id%>">View</a> <!--This links to our hero's show page-->
-        <a href = "/heros/<%=hero.id%>/edit">Edit</a> <!--This links to our hero's edit page-->
-        <!--We include our deleteForm file to display our delete button on the heros home/index page-->
-        <!--Since we are using a dynamic url for our delete form we need to assign a url when we include or deleteForm.ejs file-->
-        <%-include('../partials/deleteForm', {url: `/heros/${hero.id}`})%>
-    </div>
-<% }) %>
+<div class = "form-row">
+    <h2 class = "page-header">Search Heros</h2>
+    <!--We create our index page form here-->
+    <form action = "/heros" method="GET">
+        <!--now we design our form-->
+        <div class = "form-item">
+            <label>Hero Name</label>
+            <!--Input field-->
+            <input  type = "text" name = "name" value = "<%=searchOptions.name%>">
+        </div>
+        <!--Buttons-->
+        <div class = "btn-row form-row-end">
+            <a class ="btn btn-primary" href = "/" >Cancel</a>
+            <!--Search submit button-->
+            <button class = "btn btn-primary" type ="submit">Search</button>
+        </div>
+    </form>
+    <br>
+    <!--After our form we need to display our heros names-->
+    <% heros.forEach(hero => { %>
+        <div class = "form-item">
+            <div class = "hero-name" >
+               <%=hero.name%>
+            </div>
+            <div class = "btn-row form-row-end">
+                <a class ="btn btn-primary" href = "/heros/<%=hero.id%>">View</a> <!--This links to our hero's show page-->
+                <a class = "btn btn-primary" href = "/heros/<%=hero.id%>/edit">Edit</a> <!--This links to our hero's edit page-->
+                <!--We include our deleteForm file to display our delete button on the heros home/index page-->
+                <!--Since we are using a dynamic url for our delete form we need to assign a url when we include or deleteForm.ejs file-->
+                <%-include('../partials/deleteForm', {url: `/heros/${hero.id}`})%>
+            </div>
+        </div>
+    <% }) %>
+</div>

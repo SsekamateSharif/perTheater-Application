@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet"/>
+    <!--We link our main.css to our layouts-->
+    <link rel = "stylesheet" href ="/stylesheets/main.css" />
     <title>perTheater</title>
 </head>
 <body>
-    <%-include('../partials/header')%>
-    <!--We include our errorMessage ejs file here-->
-    <%-include('../partials/errorMessage')%>
-    <%-body%> <!--Includes the code template from the index view page-->
+    <div class = "container">
+        <%-include('../partials/header')%>
+        <!--We include our errorMessage ejs file here-->
+        <div class = "inner-container">
+            <%-include('../partials/errorMessage')%>
+            <%-body%> <!--Includes the code template from the index view page-->
+        </div>
+    </div>
     <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>

@@ -1,0 +1,49 @@
+/* we will add our form designs here*/
+.form-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-evenly;
+    margin-left: 3rem;
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+.form-item label{
+    font-size: 1.3rem;
+    color: var(--color-text-light-form);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.form-item input{
+    padding: 0.5rem 1.2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input-border-color);
+    background: var(--input-bg-color);
+    font-size: 0.85rem;
+    color: var(--color-text-light-form);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    transition: all 3s ease;
+}
+.form-item input:focus{
+    border-color: #A83D52;
+    box-shadow: 0 0 15px #00E5FF;
+}
+.hero-name{
+    font-size: 1.3rem;
+    color: var(--color-text-light-form);
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+    transition: all 3s ease;
+}
+.hero-name:hover{
+    text-shadow: 0 0 10px #00e5ff;
+    cursor: pointer;
+}

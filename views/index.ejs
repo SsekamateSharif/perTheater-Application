@@ -1,11 +1,13 @@
 <!--here we will write HTML code for the layout of our homepage-->
-<h2>Recently Added Movies</h2>
-<div>
-    <%movies.forEach(movie => {%>
-        <div>
-            <a href = "/movies/<%=movie.id%>">
-               <img height = "150" width = "150" src = "<%=movie.coverImagePath%>">
-            </a>
-        </div>
-    <%}) %>
+<div class = "index-content">
+    <h2 class = "page-header">Recently Added Movies</h2>
+    <div class = "imgs-displayed">
+        <%movies.forEach(movie => {%>
+            <div class ="each-img">
+                <a href = "/movies/<%=movie.id%>">
+                <img height = "150" width = "150" src = "<%=movie.coverImagePath%>">
+                </a>
+            </div>
+        <%}) %>
+    </div>
 </div>

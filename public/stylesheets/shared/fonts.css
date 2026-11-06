@@ -1,0 +1,16 @@
+/*here i will import our fonts that we downloaded*/
+@font-face{
+    src: url('/fonts/Maribela Demo.otf');
+    font-family: 'Maribela Demo';
+    font-weight: bold;
+}
+@font-face{
+    src: url('/fonts/Nakota-Bold.ttf');
+    font-family: 'Nakota-Bold';
+    font-weight: bold;
+}
+@font-face{
+    src: url('/fonts/Nakota-Regular.ttf');
+    font-family: 'Nakota-Regular';
+    font-weight: normal;
+}

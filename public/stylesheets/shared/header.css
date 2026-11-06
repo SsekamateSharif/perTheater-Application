@@ -1,0 +1,44 @@
+/* we will design our header from here */
+.nav-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+.nav-title{
+    text-decoration: none;
+    color: var(--color-text-light-header);
+    font-size: var(--nav-title-font-size);
+    font-family: 'Maribela Demo';
+    font-weight: bold;
+}
+.nav-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.header-link{
+    list-style: none;
+}
+.header-link a{
+    text-decoration: none;
+    color: var(--color-text-light-header);
+    transition: text-shadow 0.3s ease;
+    padding: 0 1.5rem;
+    font-size: var(--nav-links-font-size);
+    font-family: 'Maribela Demo';
+    font-weight: bold;
+}
+.header-link a:hover{
+    text-shadow: 0 0 10px #00e5ff;
+    text-decoration: underline;
+    text-decoration-color: #00e5ff;
+    cursor: pointer;
+}
+.nav-title:hover{
+    text-shadow: 0 0 10px #00e5ff;
+    cursor: pointer;
+}

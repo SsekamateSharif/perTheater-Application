@@ -1,7 +1,11 @@
-<h2>New Hero</h2> <!--This is the title of our new hero page-->
+<div class = "form-row">
+   <h2 class = page-header>New Hero</h2> <!--This is the title of our new hero page-->
+</div>
 <!--We create our form for our new heros page-->
 <form action ="/heros" method ="POST">
     <%-include('_form_fields')%>
-    <a href = "/heros">Cancel</a>  <!--This button links back to our heros index page-->
-    <button type = "submit" >Create</button> <!--This submits our form-->
-</form>
+    <div class ="btn-row form-row-end">
+        <a class ="btn btn-primary" href = "/heros">Cancel</a>  <!--This button links back to our heros index page-->
+        <button class ="btn btn-primary" type = "submit" >Create</button> <!--This submits our form-->
+    </div>
+</form>  

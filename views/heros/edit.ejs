@@ -1,9 +1,13 @@
-<h2>Edit Hero</h2> <!--This is our edit page heading-->
-<!--We create a form that will submit a hero update request to our server-->
+<div class = "form-row">
+    <h2 class = "page-header">Edit Hero</h2> <!--This is our edit page heading-->
+    <!--We create a form that will submit a hero update request to our server-->
+</div>
 <!--We need to do a method override in order to submit the update "PUT" request to our server-->
 <form action = "/heros/<%=hero.id%>?_method=PUT" method="POST">
     <%-include('_form_fields')%>
-    <!--We add our cancel and submit buttons-->
-    <a href = "/heros">Cancel</a>
-    <button type = "submit">Update</button>
+    <div class = "btn-row form-row-end">
+        <!--We add our cancel and submit buttons-->
+        <a class = "btn btn-primary" href = "/heros">Cancel</a>
+        <button class = "btn btn-primary" type = "submit">Update</button>
+    </div>
 </form>

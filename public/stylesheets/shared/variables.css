@@ -1,0 +1,16 @@
+/*we will define our variables here*/
+:root{
+    --color-background-dark: #8B0000;
+    --color-background-light: #FF1A1A;
+    --color-text-light: white;
+    --color-text-light-header: #D1D5DB;
+    --color-text-light-form: #E0F7FA;
+    --nav-title-font-size: 2.5rem;
+    --nav-links-font-size: 1rem;
+    --input-border-color: #00E5FF;
+    --input-bg-color: #C08497;
+    --btn-border: #00E5FF;
+    --color-text-light-dark: black;
+    --btn-prim-bg-color: #D4AF37;
+    --btn-danger-bg-color: #32CD32;
+}
